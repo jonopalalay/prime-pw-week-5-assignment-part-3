@@ -48,3 +48,29 @@ console.log(findByArtist('Jimmy eat World'));
 console.log(findByArtist('J Cole'));
 console.log(findByArtist('Muse'));
 console.log(findByArtist('Kanye West'));
+
+
+
+
+function search(searchArtist, searchYear){
+  let searchArray = [];
+  const searchCriteria = {
+    artist: searchArtist,
+    year:  searchYear
+}
+
+if(searchCriteria.artist === undefined && searchCriteria.year === undefined){
+  return collection;
+}
+  for(let i=0; i<collection.length; i++){
+    if( collection[i].artist === searchArtist && collection[i].yearPublished === searchYear){
+    searchArray.push(collection[i]);
+      }
+    }
+    return searchArray;
+  }
+
+
+console.log(search('Ray Charles', '1957'));
+console.log(search());
+console.log(search('Linkin Park','2000'));

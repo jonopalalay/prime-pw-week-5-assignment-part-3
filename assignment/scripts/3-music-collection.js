@@ -8,7 +8,7 @@ function addToCollection(title, artist, yearPublished, tracks){
     title: title,
     artist: artist,
     yearPublished: yearPublished,
-    tracks: tracks
+    tracks: tracks,
   }
   collection.push(album);
   return album;
@@ -28,7 +28,7 @@ function showCollection(array){
     console.log('The length of the array:', array.length);
     for(let i=0;i<array.length; i++){
       console.log(`${array[i].title} by ${array[i].artist} published in ${array[i].yearPublished}
-1. ${array[i].tracks}`);
+${array[i].tracks}`);
     }//updated tracks to show up in the collection
 }
 showCollection(collection);
@@ -62,7 +62,7 @@ function search(searchArtist, searchYear, searchTracks){
     tracks: searchTracks
 }
 
-if(searchCriteria.artist === undefined && searchCriteria.year === undefined && searchArtist === undefined){
+if(searchCriteria.artist === undefined && searchCriteria.year === undefined && searchArtist === undefined && searchTracks === undefined){
   return collection;
 }
   for(let i=0; i<collection.length; i++){
